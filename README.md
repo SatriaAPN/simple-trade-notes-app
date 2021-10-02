@@ -5,7 +5,7 @@ this is an application allow you to add your previous purchase of anything, you 
 - Fadil Ramadhan (Frontend)
 - Satria Aluh Perwira Nusa (Backend)
 
-## How to Install the Pariwisata-daerah-API
+## How to Install
 - clone this repository first
 - open the folder folder with your favorite IDE, i am using VSCode
 - make sure nodejs already installed in your computer/device
