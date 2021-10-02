@@ -51,9 +51,9 @@
                 <tbody class="render-data ">
                   <% for(let note of data.notes) { %>
                     <tr class="index-data">
-                      <td>19 mei 2021</td>
-                      <td><%= note.name %></td>
-                      <td><%= note.price %></td>
+                      <td><%- new Date(note.createdAt).toDateString(); %></td>
+                      <td><%= note.name; %></td>
+                      <td><%= note.price; %></td>
                       <td><button class="btn btn-primary" > <a style="text-decoration: none; color: white;" href= <%= `/api/delete/${note.id}` %>>delete</a></button></td>
                     </tr>  
                   <% } %>
@@ -62,7 +62,7 @@
                   <tr>
                    
                     <th scope="col " colspan="3">total harga</th>
-                    <th scope="col">60.000</th>
+                    <th scope="col"> <%- data.notes.reduce((as,bs) => as + bs.price, 0); %> </th>
                   </tr>
                 </tbody>
               </table>

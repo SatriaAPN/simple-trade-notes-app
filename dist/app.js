@@ -42,7 +42,8 @@ app.post('/api/add', async(req, res, next) => {
         file.array.push({
             id,
             name,
-            price: parseInt(price)
+            price: parseInt(price),
+            createdAt: new Date()
         })
 
         fs.writeFile(fileName, JSON.stringify(file, null, 2), (err) => {
