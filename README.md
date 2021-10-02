@@ -1,5 +1,5 @@
-## Management-employee-task-api
-this is an application that let manager manage the tasks of all the employee, and the employee can perform the CRUD operation on tasks.
+## simple-trade-notes-app
+this is an application allow you to add your previous purchase of anything, you can input name and price to it, and it doesn't use database you dont need to configure it.
 
 ## this project was made by :
 - Fadil Ramadhan (Frontend)
