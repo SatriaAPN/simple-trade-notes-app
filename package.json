@@ -1,0 +1,15 @@
+{
+  "name": "simple-trade-notes-app",
+  "version": "1.0.0",
+  "description": "simple trade notes",
+  "main": "app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./dist/app.js",
+    "start-dev": "nodemon ./dist/app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}

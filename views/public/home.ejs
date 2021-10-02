@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    
+<div class="container mt-4">
+    <h1 class="my-2 text-center">Note App</h1>
+    <div class="col mx-auto">
+      <div class="col">
+        <% if(typeof message != "undefined"){ %>
+          <div class="alert alert-success" role="alert">
+            <%= message %>
+          </div>
+        <% } %>
+          
+          <!-- <div class="alert alert-danger" role="alert">
+            gagal ditambahkan!
+          </div> -->
+      </div>
+        <div class="row">
+            <div class="col">
+                <form class="form" action="/api/add" method="POST">
+                    <div class="form-group">
+                      <label for="nama">nama item</label>
+                      <input type="nama" class="form-control" name="name" id="nama" placeholder="nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="harga">harga</label>
+                        <input type="harga" class="form-control" name="price" id="harga" placeholder="harga" required>
+                      </div>
+                    <button type="submit" class="btn btn-submit btn-primary">Submit</button>
+                  </form>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">tgl</th>
+                    <th scope="col">nama item</th>
+                    <th scope="col">harga</th>
+                    <th scope="col">action</th>
+                  </tr>
+                </thead>
+                <tbody class="render-data ">
+                  <% for(let note of data.notes) { %>
+                    <tr class="index-data">
+                      <td>19 mei 2021</td>
+                      <td><%= note.name %></td>
+                      <td><%= note.price %></td>
+                      <td><button class="btn btn-primary" > <a style="text-decoration: none; color: white;" href= <%= `/api/delete/${note.id}` %>>delete</a></button></td>
+                    </tr>  
+                  <% } %>
+                </tbody>
+                <tbody class="bg-dark text-white">
+                  <tr>
+                   
+                    <th scope="col " colspan="3">total harga</th>
+                    <th scope="col">60.000</th>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- <script src="main.js"></script> -->
+</html>
